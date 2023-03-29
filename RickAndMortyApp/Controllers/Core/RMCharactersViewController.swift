@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RMCharactersViewController.swift
 //  RickAndMortyApp
 //
 //  Created by Максим Мельничук on 30.03.23.
@@ -7,13 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class RMCharacterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .systemBackground
+        title = "Characters"
     }
 
-
 }
-
