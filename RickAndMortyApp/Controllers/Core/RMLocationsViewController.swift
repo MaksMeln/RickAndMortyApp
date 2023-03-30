@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class RMLocationViewController: UIViewController, RMLocationViewViewModelDelegate {
+final class RMLocationViewController: UIViewController, RMLocationViewViewModelDelegate, RMLocationViewDelegate {
 
     private let primaryView = RMLocationView()
 
@@ -27,6 +27,7 @@ final class RMLocationViewController: UIViewController, RMLocationViewViewModelD
         
         addSearchButton()
         addConstraints()
+        primaryView.delegate = self
        }
 
        private func addSearchButton() {
@@ -46,6 +47,13 @@ final class RMLocationViewController: UIViewController, RMLocationViewViewModelD
        @objc private func didTapSearch() {
 
     }
+    
+    // MARK: - RMLocationViewDelegate
+      func rmLocationView(_ locationView: RMLocationView, didSelect location: RMLocation) {
+          let vc = RMLocationDetailViewController(location: location)
+          vc.navigationItem.largeTitleDisplayMode = .never
+          navigationController?.pushViewController(vc, animated: true)
+      }
     
     // MARK: - LocationViewModel Delegate
       func didFetchInitialLocations() {
