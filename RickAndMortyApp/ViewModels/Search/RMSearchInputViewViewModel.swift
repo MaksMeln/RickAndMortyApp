@@ -55,13 +55,6 @@ final class RMSearchInputViewViewModel {
         }
     }
     
-    public func executeSearch() {
-            // Create Request based on filters
-        
-            // Send API Call
-        
-            // Notify view of results, no results, or error
-        }
     
     public var searchPlacecholderText: String {
         switch self.type {
