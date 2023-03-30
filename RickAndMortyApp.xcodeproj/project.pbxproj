@@ -53,6 +53,10 @@
 		487DC64729D50476003A1327 /* RMEpisodeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DC64629D50476003A1327 /* RMEpisodeListView.swift */; };
 		487DC64929D5048F003A1327 /* RMEpisodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DC64829D5048F003A1327 /* RMEpisodeDetailView.swift */; };
 		487DC64B29D50499003A1327 /* RMEpisodeInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DC64A29D50499003A1327 /* RMEpisodeInfoCollectionViewCell.swift */; };
+		487DC64F29D50857003A1327 /* RMSetiingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DC64E29D50857003A1327 /* RMSetiingsView.swift */; };
+		487DC65129D5087B003A1327 /* RMSettingsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DC65029D5087B003A1327 /* RMSettingsViewViewModel.swift */; };
+		487DC65329D50884003A1327 /* RMSettingsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DC65229D50884003A1327 /* RMSettingsCellViewModel.swift */; };
+		487DC65529D5088C003A1327 /* RMSettingsOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DC65429D5088C003A1327 /* RMSettingsOptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +108,10 @@
 		487DC64629D50476003A1327 /* RMEpisodeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMEpisodeListView.swift; sourceTree = "<group>"; };
 		487DC64829D5048F003A1327 /* RMEpisodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMEpisodeDetailView.swift; sourceTree = "<group>"; };
 		487DC64A29D50499003A1327 /* RMEpisodeInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMEpisodeInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		487DC64E29D50857003A1327 /* RMSetiingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSetiingsView.swift; sourceTree = "<group>"; };
+		487DC65029D5087B003A1327 /* RMSettingsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSettingsViewViewModel.swift; sourceTree = "<group>"; };
+		487DC65229D50884003A1327 /* RMSettingsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSettingsCellViewModel.swift; sourceTree = "<group>"; };
+		487DC65429D5088C003A1327 /* RMSettingsOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSettingsOptions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +203,7 @@
 				487DC63C29D5036A003A1327 /* EpisodeDetail */,
 				487DC61929D4FA8F003A1327 /* Character */,
 				487DC61A29D4FAA2003A1327 /* ChracterDetail */,
+				487DC64D29D50845003A1327 /* Settings */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -206,6 +215,7 @@
 				487DC61C29D4FB1B003A1327 /* CharacterDetail */,
 				487DC64429D50448003A1327 /* Episode */,
 				487DC64529D50451003A1327 /* EpisodeDetail */,
+				487DC64C29D50835003A1327 /* Settings */,
 				487DC62329D4FB88003A1327 /* FooterLoading */,
 			);
 			path = Views;
@@ -347,6 +357,24 @@
 			path = EpisodeDetail;
 			sourceTree = "<group>";
 		};
+		487DC64C29D50835003A1327 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				487DC64E29D50857003A1327 /* RMSetiingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		487DC64D29D50845003A1327 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				487DC65029D5087B003A1327 /* RMSettingsViewViewModel.swift */,
+				487DC65229D50884003A1327 /* RMSettingsCellViewModel.swift */,
+				487DC65429D5088C003A1327 /* RMSettingsOptions.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -420,6 +448,7 @@
 				487DC5EE29D4F491003A1327 /* RMTabViewController.swift in Sources */,
 				487DC62F29D4FF72003A1327 /* RMCharacterEpisodeCollectionViewCellViewModel.swift in Sources */,
 				487DC63529D50114003A1327 /* RMCharacterEpisodeCollectionViewCell.swift in Sources */,
+				487DC65129D5087B003A1327 /* RMSettingsViewViewModel.swift in Sources */,
 				487DC63729D502AB003A1327 /* RMSearchViewController.swift in Sources */,
 				487DC64329D503E0003A1327 /* RMEpisodeListViewViewModel.swift in Sources */,
 				487DC5D129D4F256003A1327 /* AppDelegate.swift in Sources */,
@@ -430,6 +459,7 @@
 				487DC61829D4FA89003A1327 /* RMCharacterDetailViewViewModel.swift in Sources */,
 				487DC60429D4F73D003A1327 /* RMCharacterGender.swift in Sources */,
 				487DC5F029D4F49E003A1327 /* RMCharactersViewController.swift in Sources */,
+				487DC65529D5088C003A1327 /* RMSettingsOptions.swift in Sources */,
 				487DC5F829D4F54E003A1327 /* RMLocation.swift in Sources */,
 				487DC5F229D4F4A9003A1327 /* RMEpisodesViewController.swift in Sources */,
 				487DC64B29D50499003A1327 /* RMEpisodeInfoCollectionViewCell.swift in Sources */,
@@ -446,6 +476,7 @@
 				487DC64029D5039B003A1327 /* RMEpisodeInfoCollectionViewCellViewModel.swift in Sources */,
 				487DC60C29D4F99C003A1327 /* RMCharacterDetailViewController.swift in Sources */,
 				487DC64929D5048F003A1327 /* RMEpisodeDetailView.swift in Sources */,
+				487DC65329D50884003A1327 /* RMSettingsCellViewModel.swift in Sources */,
 				487DC64729D50476003A1327 /* RMEpisodeListView.swift in Sources */,
 				487DC60229D4F6C1003A1327 /* RMEndpoint.swift in Sources */,
 				487DC61E29D4FB55003A1327 /* RMCharacterListView.swift in Sources */,
@@ -453,6 +484,7 @@
 				487DC62229D4FB70003A1327 /* RMCharacterDetailView.swift in Sources */,
 				487DC63929D502CC003A1327 /* RMAPICacheManager.swift in Sources */,
 				487DC60A29D4F761003A1327 /* RMOrigin.swift in Sources */,
+				487DC64F29D50857003A1327 /* RMSetiingsView.swift in Sources */,
 				487DC62929D4FF0B003A1327 /* RMEpisodeDetailViewController.swift in Sources */,
 				487DC61029D4F9F3003A1327 /* RMGetAllCharactersResponse.swift in Sources */,
 				487DC60029D4F6B8003A1327 /* RMRequest.swift in Sources */,
@@ -604,6 +636,7 @@
 				DEVELOPMENT_TEAM = H24VKTWR7D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RickAndMortyApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Rick and Morty";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -631,6 +664,7 @@
 				DEVELOPMENT_TEAM = H24VKTWR7D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RickAndMortyApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Rick and Morty";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
