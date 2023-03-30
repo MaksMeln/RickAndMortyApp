@@ -24,7 +24,7 @@ final class RMAPICacheManager {
             return nil
         }
         let key = url.absoluteString as NSString
-        return targetCache.object(forKey: key) as? Data
+        return targetCache.object(forKey: key) as Data?
     }
 
     public func setCache(for endpoint: RMEndpoint, url: URL?, data: Data) {
