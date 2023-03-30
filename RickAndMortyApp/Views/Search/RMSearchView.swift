@@ -23,7 +23,6 @@ final class RMSearchView : UIView {
     private let searchInputView = RMSearchInputView()
     
     private let noResultsView = RMNoSearchResiltsView()
-    // No results view
     
     
     //Results CollectionView
@@ -43,7 +42,7 @@ final class RMSearchView : UIView {
          searchInputView.configure(with: RMSearchInputViewViewModel(type: viewModel.config.type))
          searchInputView.delegate = self
          
-         viewModel.registrOptionChangeBlock { tuple in
+         viewModel.registerOptionChangeBlock { tuple in
              self.searchInputView.update(option: tuple.0, value: tuple.1)
          }
     }
