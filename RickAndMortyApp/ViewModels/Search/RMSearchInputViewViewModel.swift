@@ -15,6 +15,17 @@ final class RMSearchInputViewViewModel {
         case status = "Status"
         case gender = "Gender"
         case locationType = "Location Type"
+        
+        var choices: [String] {
+            switch self {
+            case .status:
+                return ["alve", "dead", "unknown"]
+            case .gender:
+                return ["male", "female", "genderless", "unknown"]
+            case .locationType:
+                return ["cluster", "planet", "microverse"]
+            }
+        }
     }
     
     init(type: RMSearchViewController.Config.`Type`) {
@@ -32,9 +43,6 @@ final class RMSearchInputViewViewModel {
             
         }
     }
-    //case character // name | status | gender
-    //case episode // name
-    //case location // name | type
     
     public var options: [DynamicOptions] {
         switch self.type {
@@ -49,7 +57,9 @@ final class RMSearchInputViewViewModel {
     
     public func executeSearch() {
             // Create Request based on filters
+        
             // Send API Call
+        
             // Notify view of results, no results, or error
         }
     
