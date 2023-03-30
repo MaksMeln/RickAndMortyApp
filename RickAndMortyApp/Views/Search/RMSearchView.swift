@@ -13,9 +13,12 @@ final class RMSearchView : UIView {
     
     //MARK: - Subviews
     
+    
+    
     //MARK: - SearchInputView(bar, selection buttons)
     
     
+    private let noResultsView = RMNoSearchResiltsView()
     // No results view
     
     
@@ -27,13 +30,25 @@ final class RMSearchView : UIView {
      init(frame: CGRect, viewModel: RMSearchViewViewModel) {
          self.viewModel = viewModel
          super.init(frame: frame)
-        
-        backgroundColor = .red
+         backgroundColor = .systemBackground
         translatesAutoresizingMaskIntoConstraints = false
+         
+         addSubview(noResultsView)
+         addConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func addConstraints() {
+        NSLayoutConstraint.activate([
+            noResultsView.widthAnchor.constraint(equalToConstant: 150),
+            noResultsView.heightAnchor.constraint(equalToConstant: 150),
+            noResultsView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            noResultsView.centerYAnchor.constraint(equalTo: centerYAnchor),
+        
+        ])
     }
 }
 
