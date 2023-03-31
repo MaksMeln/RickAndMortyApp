@@ -12,7 +12,7 @@ final class RMTableLoadingFooterView: UIView {
     private let spinner : UIActivityIndicatorView = {
        let spinner = UIActivityIndicatorView()
         spinner.translatesAutoresizingMaskIntoConstraints = false
-        spinner.hidesWhenStopped
+        spinner.hidesWhenStopped = true
         return spinner
     }()
 

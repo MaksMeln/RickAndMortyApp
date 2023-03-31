@@ -106,7 +106,7 @@ extension RMSearchViewController : RMSearchViewDelegate {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    func rmSearchView(_ searchView: RMSearchView, didSelectOption option: RMSearchInputViewViewModel.DynamicOptions) {
+    func rmSearchView(_ searchView: RMSearchView, didSelectOption option: RMSearchInputViewViewModel.DynamicOption) {
         let vc = RMSearchOptionPickerViewController(option: option, selection: { [weak self] selection in
             DispatchQueue.main.async {
                 self?.viewModel.set(value: selection, for: option)

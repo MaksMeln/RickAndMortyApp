@@ -46,7 +46,7 @@ enum RMSettingsOption: CaseIterable {
         case .privacy:
             return "Privacy Policy"
         case .apiReference:
-            return "API Referenec"
+            return "API Reference"
         case .viewSeries:
             return "View VIdeo Series"
         case .viewCode:
@@ -84,7 +84,7 @@ enum RMSettingsOption: CaseIterable {
         case .privacy:
             return UIImage(systemName: "lock")
         case .apiReference:
-            return UIImage(systemName: "list.bullet.clipboard")
+            return UIImage(systemName: "list.bullet.rectangle.portrait")
         case .viewSeries:
             return UIImage(systemName: "tv.fill")
         case .viewCode:

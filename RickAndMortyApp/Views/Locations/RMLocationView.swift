@@ -146,9 +146,6 @@ extension RMLocationView : UIScrollViewDelegate {
                     self?.showLoadingIndicator()
                 }
                 viewModel.fetchAdditionalLocations()
-//                DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
-//                    self?.tableView.reloadData()
-//                })
             }
             t.invalidate()
         }
