@@ -73,6 +73,7 @@
 		48CB50D729D58A6C001A53C2 /* RMSearchInputViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB50D629D58A6C001A53C2 /* RMSearchInputViewViewModel.swift */; };
 		48CB50D929D5B0BC001A53C2 /* RMSearchOptionPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB50D829D5B0BC001A53C2 /* RMSearchOptionPickerViewController.swift */; };
 		48CB50DC29D6CC14001A53C2 /* RMSearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB50DB29D6CC14001A53C2 /* RMSearchResultViewModel.swift */; };
+		48CB50DE29D6DA7B001A53C2 /* RMSearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB50DD29D6DA7B001A53C2 /* RMSearchResultsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,6 +145,7 @@
 		48CB50D629D58A6C001A53C2 /* RMSearchInputViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSearchInputViewViewModel.swift; sourceTree = "<group>"; };
 		48CB50D829D5B0BC001A53C2 /* RMSearchOptionPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSearchOptionPickerViewController.swift; sourceTree = "<group>"; };
 		48CB50DB29D6CC14001A53C2 /* RMSearchResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSearchResultViewModel.swift; sourceTree = "<group>"; };
+		48CB50DD29D6DA7B001A53C2 /* RMSearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSearchResultsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -454,6 +456,7 @@
 				48CB50CB29D586E4001A53C2 /* RMSearchView.swift */,
 				48CB50D029D589F7001A53C2 /* RMNoSearchResultsView.swift */,
 				48CB50D429D58A5F001A53C2 /* RMSearchInputView.swift */,
+				48CB50DD29D6DA7B001A53C2 /* RMSearchResultsView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				48CB50D329D58A26001A53C2 /* RMNoSearchResultsViewViewModel.swift in Sources */,
 				487DC64329D503E0003A1327 /* RMEpisodeListViewViewModel.swift in Sources */,
 				487DC5D129D4F256003A1327 /* AppDelegate.swift in Sources */,
+				48CB50DE29D6DA7B001A53C2 /* RMSearchResultsView.swift in Sources */,
 				487DC63329D50108003A1327 /* RMCharacterInfoCollectionViewCell.swift in Sources */,
 				487DC60629D4F748003A1327 /* RMCharaterStatus.swift in Sources */,
 				487DC62729D4FD05003A1327 /* RMImageLoader.swift in Sources */,

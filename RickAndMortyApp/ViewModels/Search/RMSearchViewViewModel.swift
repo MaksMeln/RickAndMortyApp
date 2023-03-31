@@ -19,6 +19,8 @@ final class RMSearchViewViewModel {
     
     private var searchResultHandler: ((RMSearchResultViewModel) -> Void)?
     
+    private var noResultHandler: (() -> Void)?
+    
     // MARK: - Init
     init(config: RMSearchViewController.Config) {
         self.config = config
@@ -27,6 +29,10 @@ final class RMSearchViewViewModel {
     // MARK: - Public
     public func registerSearchResultHandler(_ block: @escaping (RMSearchResultViewModel) -> Void) {
         self.searchResultHandler = block
+    }
+    
+    public func registerNoResultHandler(_ block: @escaping () -> Void) {
+        self.noResultHandler = block
     }
     
     public func executeSearch() {
@@ -56,6 +62,10 @@ final class RMSearchViewViewModel {
     }
     
     
+    private func handleNoResults() {
+        print("not")
+        noResultHandler?()
+    }
     
     private func makeSearchAPICall<T: Codable>(_ type: T.Type, request: RMRequest) {
         RMService.shared.execute(request, expecting: type) { [weak self] result in
@@ -64,6 +74,7 @@ final class RMSearchViewViewModel {
             case .success(let model):
                 self?.processSearchResults(model: model)
             case .failure:
+                self?.handleNoResults()
                 break
             }
         }
@@ -97,6 +108,7 @@ final class RMSearchViewViewModel {
             self.searchResultHandler?(results)
         } else {
             // fallback error
+            handleNoResults()
         }
     }
     
