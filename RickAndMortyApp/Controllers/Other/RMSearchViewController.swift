@@ -27,6 +27,8 @@ final class RMSearchViewController: UIViewController {
                 }
             }
             
+            
+            
             var title: String {
                 switch self {
                 case .character :
@@ -88,7 +90,7 @@ final class RMSearchViewController: UIViewController {
     
     private func addConstraints() {
         NSLayoutConstraint.activate([
-        
+            
             searchView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             searchView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
             searchView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
@@ -98,7 +100,7 @@ final class RMSearchViewController: UIViewController {
 }
 
 extension RMSearchViewController : RMSearchViewDelegate {
-    func rmsearchView(_ searchView: RMSearchView, didSelectOption option: RMSearchInputViewViewModel.DynamicOptions) {
+    func rmSearchView(_ searchView: RMSearchView, didSelectOption option: RMSearchInputViewViewModel.DynamicOptions) {
         let vc = RMSearchOptionPickerViewController(option: option, selection: { [weak self] selection in
             DispatchQueue.main.async {
                 self?.viewModel.set(value: selection, for: option)
@@ -109,3 +111,4 @@ extension RMSearchViewController : RMSearchViewDelegate {
         present(vc, animated: true)
     }
 }
+

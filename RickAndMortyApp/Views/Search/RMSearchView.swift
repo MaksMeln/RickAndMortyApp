@@ -8,49 +8,43 @@
 import UIKit
 
 protocol RMSearchViewDelegate: AnyObject {
-    func rmsearchView(_ searchView: RMSearchView, didSelectOption option: RMSearchInputViewViewModel.DynamicOptions)
+    func rmSearchView(_ searchView: RMSearchView, didSelectOption option: RMSearchInputViewViewModel.DynamicOptions)
 }
 
-final class RMSearchView : UIView {
-    
+final class RMSearchView: UIView {
     weak var delegate: RMSearchViewDelegate?
-    
-    private let viewModel : RMSearchViewViewModel
-    
-    //MARK: - Subviews
+    private let viewModel: RMSearchViewViewModel
     
     
+    // MARK: - Subviews
     private let searchInputView = RMSearchInputView()
     
-    private let noResultsView = RMNoSearchResiltsView()
+    private let noResultsView = RMNoSearchResultsView()
     
     
-    //Results CollectionView
-    
-    
-    
-    //MARK: - Init
-     init(frame: CGRect, viewModel: RMSearchViewViewModel) {
-         self.viewModel = viewModel
-         super.init(frame: frame)
-         backgroundColor = .systemBackground
+    // Results collectionView
+    // MARK: - Init
+    init(frame: CGRect, viewModel: RMSearchViewViewModel) {
+        self.viewModel = viewModel
+        super.init(frame: frame)
+        backgroundColor = .systemBackground
         translatesAutoresizingMaskIntoConstraints = false
-         
-         addSubviews(noResultsView, searchInputView)
-         addConstraints()
-         
-         searchInputView.configure(with: RMSearchInputViewViewModel(type: viewModel.config.type))
-         searchInputView.delegate = self
-         
-         viewModel.registerOptionChangeBlock { tuple in
-             self.searchInputView.update(option: tuple.0, value: tuple.1)
-         }
+        addSubviews(noResultsView, searchInputView)
+        addConstraints()
+        searchInputView.configure(with: RMSearchInputViewViewModel(type: viewModel.config.type))
+        searchInputView.delegate = self
+        viewModel.registerOptionChangeBlock { tuple in
+            self.searchInputView.update(option: tuple.0, value: tuple.1)
+        }
+
+        viewModel.registerSearchResultHandler { results in
+            print(results)
+        }
     }
-    
+
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError()
     }
-    
     private func addConstraints() {
         NSLayoutConstraint.activate([
             // Search input view
@@ -58,7 +52,6 @@ final class RMSearchView : UIView {
             searchInputView.leftAnchor.constraint(equalTo: leftAnchor),
             searchInputView.rightAnchor.constraint(equalTo: rightAnchor),
             searchInputView.heightAnchor.constraint(equalToConstant: viewModel.config.type == .episode ? 55 : 110),
-            
             // No results
             noResultsView.widthAnchor.constraint(equalToConstant: 150),
             noResultsView.heightAnchor.constraint(equalToConstant: 150),
@@ -66,33 +59,34 @@ final class RMSearchView : UIView {
             noResultsView.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
     }
-    
     public func presentKeyboard() {
         searchInputView.presentKeyboard()
     }
 }
-
-//MARK: - CollectionView
-
-extension RMSearchView : UICollectionViewDelegate , UICollectionViewDataSource {
+// MARK: - CollectionView
+extension RMSearchView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 0
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         return cell
     }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
-    
 }
-
-//MARK: - RMSearchInputViewDelegate
+// MARK: - RMSearchInputViewDelegate
 extension RMSearchView: RMSearchInputViewDelegate {
     func rmSearchInputView(_ inputView: RMSearchInputView, didSelectOption option: RMSearchInputViewViewModel.DynamicOptions) {
-        delegate?.rmsearchView(self, didSelectOption: option)
+        delegate?.rmSearchView(self, didSelectOption: option)
+    }
+
+    func rmSearchInputView(_ inputView: RMSearchInputView, didChangeSearchText text: String) {
+        viewModel.set(query: text)
+    }
+
+    func rmSearchInputViewDidTapSearchKeyboardButton(_ inputView: RMSearchInputView) {
+        viewModel.executeSearch()
     }
 }

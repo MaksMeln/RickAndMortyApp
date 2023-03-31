@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class RMNoSearchResiltsView: UIView {
+final class RMNoSearchResultsView: UIView {
 
     private let viewModel = RMNoSearchResultsViewViewModel()
     
