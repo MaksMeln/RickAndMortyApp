@@ -74,6 +74,7 @@
 		48CB50D929D5B0BC001A53C2 /* RMSearchOptionPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB50D829D5B0BC001A53C2 /* RMSearchOptionPickerViewController.swift */; };
 		48CB50DC29D6CC14001A53C2 /* RMSearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB50DB29D6CC14001A53C2 /* RMSearchResultViewModel.swift */; };
 		48CB50DE29D6DA7B001A53C2 /* RMSearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB50DD29D6DA7B001A53C2 /* RMSearchResultsView.swift */; };
+		48CB50E029D715F9001A53C2 /* RMTableLoadingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB50DF29D715F9001A53C2 /* RMTableLoadingFooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,6 +147,7 @@
 		48CB50D829D5B0BC001A53C2 /* RMSearchOptionPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSearchOptionPickerViewController.swift; sourceTree = "<group>"; };
 		48CB50DB29D6CC14001A53C2 /* RMSearchResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSearchResultViewModel.swift; sourceTree = "<group>"; };
 		48CB50DD29D6DA7B001A53C2 /* RMSearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSearchResultsView.swift; sourceTree = "<group>"; };
+		48CB50DF29D715F9001A53C2 /* RMTableLoadingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMTableLoadingFooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -421,6 +423,7 @@
 			children = (
 				487DC65A29D50A8E003A1327 /* RMLocationView.swift */,
 				487DC65E29D50B37003A1327 /* RMLocationTableViewCell.swift */,
+				48CB50DF29D715F9001A53C2 /* RMTableLoadingFooterView.swift */,
 			);
 			path = Locations;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				487DC5FC29D4F565003A1327 /* RMEpisode.swift in Sources */,
 				487DC61829D4FA89003A1327 /* RMCharacterDetailViewViewModel.swift in Sources */,
 				487DC60429D4F73D003A1327 /* RMCharacterGender.swift in Sources */,
+				48CB50E029D715F9001A53C2 /* RMTableLoadingFooterView.swift in Sources */,
 				487DC5F029D4F49E003A1327 /* RMCharactersViewController.swift in Sources */,
 				487DC65529D5088C003A1327 /* RMSettingsOptions.swift in Sources */,
 				487DC65F29D50B37003A1327 /* RMLocationTableViewCell.swift in Sources */,
